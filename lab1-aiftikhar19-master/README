@@ -1,0 +1,22 @@
+Author: Aisha Iftikhar
+Class: CSE 5462
+Assignment: Lab 1
+Date: 1/14/19
+
+Description:
+count is a C program that reads a file and prints out the size of the file in bytes, as well as the number of times a specified search string appears in the file. 
+
+Requirements: 
+1. You must enter a valid input filename. If the input file is not found, the program will print an error message and exit. 
+2. You cannot search for the empty string. The input requires 4 entries. 
+
+Commands:
+To compile the program, use the following command:
+	make
+
+To run the program, use the following command:
+	count <input-filename> <search-string> <output-filename>
+
+To clean/re-compile, use the following commands:
+	make clean
+	make

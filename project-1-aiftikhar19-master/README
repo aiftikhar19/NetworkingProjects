@@ -1,0 +1,37 @@
+Author: Aisha Iftikhar
+Class: CSE 5462
+Assignment: Project 1
+Date: 4/7/20
+
+Description:
+This project implements a server side UDP protocol for a version of tic-tac-toe played on different machines. The server can play multiple games simultaneously and generates moves automatically, requiring no user input. The server can send and receive multicast requests from client and resume a game from a client. 
+
+	tictactoeServer <remote-port-number>
+
+<remote port number> is the port number from the server side script 
+
+Requirements:
+1. Provide the client with the server's IP address and chosen port number. The server must be up and running before any client can connect to it. 
+2. Message format:
+	1 byte 		1 byte		 1 byte		1 byte		1 byte				1 byte		9 bytes(on resume game)
+	Unsigned int	Unsigned int	 Unsigned int	Unsigned int	Unsigned int			Unsigned int	Unsigned int
+	Version Number	Connection Code Response Code	Player Move	Turn Number(Starts at 0)	Game Number	Game States: 0 = blank; 1 = server mark; 2 = client mark
+
+3. Response Codes (Version 4):
+	0	No errors
+	1	Invalid Move: the requested move cannot be performed given the current board configuration
+	2	Game Out of Sync: the turn number is invalid (out of sync)
+	3	Invalid Request
+	4	Game Over: sent along with game ending move
+	5	Game Over Acknowledged: sent as acknowledgement of game over
+	6	Incompatible Version Number: the version number is incompatible with local version
+	7	Server is busy: Sent by server in response to new game request
+	8 	Game number mismatch: the game number received is not valid
+	9 	Server not available: Server to client that just requested a server spot in multicast (In response to command code 3)
+
+Commands:
+To compile the program to run, use the command:
+	make
+To remove the executable and re-compile, use the commands:
+	make clean
+	make

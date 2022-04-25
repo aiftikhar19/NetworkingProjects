@@ -1,0 +1,39 @@
+Author: Aisha Iftikhar
+Class: CSE 5462
+Assignment: Lab 3
+Date: 2/6/20
+
+Description:
+This project implements a client side protocol for a version of tic-tac-toe played on different machines. 
+
+The client-side file can be run once the server side script has been launched by using the command:
+
+	tictactoeClient <remote port number> <remote IP> 
+
+<remote port number> is the port number from the server side script 
+<remote IP> is the IP address or host name of the remote server (where the server script was run)
+
+Requirements:
+1. In order for the program to run, there must already be a server running. 
+2. Message format:
+	1 byte 		1 byte		1 byte		1 byte
+	Unsigned int	Unsigned int	Unsigned int	Unsigned int
+	Version Number	Response Code	Player Move	Turn Number(Starts at 0)
+3. Response Codes (Version 0):
+	0	No errors
+	1	Invalid Move: the requested move cannot be performed given the current board configuration
+	2	Game Out of Sync: the turn number is invalid (out of sync)
+	3	Invalid Request
+	4	Game Over: sent along with game ending move
+	5	Game Over Acknowledged: sent as acknowledgement of game over
+	6	Incompatible Version Number: the version number is incompatible with local version
+
+Commands:
+To compile the program to run, use the command:
+	make
+To remove the executable and re-compile, use the commands:
+	make clean
+	make
+To run the client side program, identify the IP address and port number the server program is running on, and then use the following command:
+	tictactoeClient <remote port number> <remote IP> 
+	

@@ -1,0 +1,35 @@
+Author: Aisha Iftikhar
+Class: CSE 5462
+Assignment: Lab 2
+Date: 1/16/20
+
+Description:
+This lab implements a file-transfer protocol that includes a client and a server. Specifically, ftpc.c functions as a client. 
+
+The client-side file can be run once the server side script has been launched by using the command:
+
+	ftpc <remote IP> <remote port number> <local file to transfer>
+
+<remote IP> is the IP address or host name of the remote server (where the server script was run)
+<remote port number> is the port number from the server side script 
+<local file to transfer> is the name of a file located on the local client server that is to be transferred
+
+Requirements:
+1. In order for the program to run, there must already be a server running. 
+2. Possible returned error codes:
+	0		OK
+	100		Too many bytes received
+	300		Error creating the file
+	400		Generic server error
+	500		Malformed message
+
+Commands:
+To compile the program to run, use the command:
+	make
+To remove the executable and re-compile, use the commands:
+	make clean
+	make
+To run the client side program, identify the IP address and port number the server program is running on, and then use the following command:
+	ftpc <remote IP> <remote port number> <local file to transfer>
+	
+	
